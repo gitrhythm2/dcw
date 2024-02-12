@@ -13,10 +13,7 @@ fn main() {
             usage();
             std::process::exit(0);
         }
-        _ => {
-            eprintln!("Invalid command: {}", args[1]);
-            std::process::exit(1);
-        }
+        _ => to_vector(&args[1..]),
     };
     println!("> docker {}", opts.join(" "));
 
